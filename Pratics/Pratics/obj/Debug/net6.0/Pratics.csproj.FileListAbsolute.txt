@@ -1,0 +1,15 @@
+C:\Users\lucas\source\repos\Pratics\Pratics\bin\Debug\net6.0\Pratics.exe
+C:\Users\lucas\source\repos\Pratics\Pratics\bin\Debug\net6.0\Pratics.deps.json
+C:\Users\lucas\source\repos\Pratics\Pratics\bin\Debug\net6.0\Pratics.runtimeconfig.json
+C:\Users\lucas\source\repos\Pratics\Pratics\bin\Debug\net6.0\Pratics.dll
+C:\Users\lucas\source\repos\Pratics\Pratics\bin\Debug\net6.0\Pratics.pdb
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.csproj.AssemblyReference.cache
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.AssemblyInfoInputs.cache
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.AssemblyInfo.cs
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.dll
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\refint\Pratics.dll
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.pdb
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\Pratics.genruntimeconfig.cache
+C:\Users\lucas\source\repos\Pratics\Pratics\obj\Debug\net6.0\ref\Pratics.dll

@@ -1,0 +1,21 @@
+﻿@page "/alert"
+<h3>Alert</h3>
+
+<PageTitle>
+    Alert component
+</PageTitle>
+
+<h1>Olá componente de alerta!</h1>
+
+<button @onclick="Calculator">
+    
+</button>
+
+<p>O valor é de: @value</p>
+
+@code {
+    private int value = 0;
+    private void Calculator() {
+        value += 2;
+    }
+}
