@@ -1,5 +1,5 @@
-﻿using System.Drawing;
-using System.Xml.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 public interface IPessoa
 {
@@ -24,45 +24,16 @@ public interface IAnimal
 
 public class Dog : IAnimal
 {
-    private string size;
-    private string name;
-    private string specie;
-    private double weight;
-    private string song;
-
-    public string Size
-    {
-        get { return size; }
-        set { size = value; }
-    }
-
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
-
-    public string Specie
-    {
-        get { return specie; }
-        set { specie = value; }
-    }
-
-    public double Weight
-    {
-        get { return weight; }
-        set { weight = value; }
-    }
-
-    public string Song
-    {
-        get { return song; }
-        set { song = value; }
-    }
+    public string Size { get; set; }
+    public string Name { get; set; }
+    public string Specie { get; set; }
+    public double Weight { get; set; }
+    public string Song { get; set; }
+    public bool Violent { get; set; }
 
     public void SaySong()
     {
-        Console.WriteLine($"O animal {Name} da especie {Specie} faz o som de {Song}");
+        Console.WriteLine($"O animal {Name} da espécie {Specie} faz o som de {Song}");
     }
 }
 
@@ -83,7 +54,7 @@ public class Velhice : Employee
     public string AgeFabrication { get; set; }
     public string Type { get; set; }
 
-    public void sayFabrication()
+    public void SayFabrication()
     {
         Console.WriteLine($"{Type} de {Name} foi fabricado no ano {AgeFabrication}");
     }
@@ -120,11 +91,6 @@ public class Animal : IAnimal
     public string Song { get; set; }
     public bool Violent { get; set; }
 
-    public void WhatAnimalIm()
-    {
-        Console.WriteLine($"Eu sou animal {Name} da espécie {Specie} e peso {Weight}");
-    }
-
     public void SaySong()
     {
         Console.WriteLine($"O animal {Name} pesa {Weight} kg!");
@@ -136,52 +102,27 @@ public class Carr : Animal
     public string ModelCarr { get; set; }
 }
 
-
 public class Program
 {
     public static void Main()
-        // o tipo nao ´´e pessoa mais, mas sim <IPessoa>
     {
-        List <IPessoa> pessoas = new List<IPessoa>();
+        List<IPessoa> pessoas = new List<IPessoa>();
 
         pessoas.Add(new Pessoa { Name = "Lucas", Age = 24, LastName = "Oliveira" });
 
-        foreach(var pessoa in pessoas)
+        foreach (var pessoa in pessoas)
         {
             pessoa.SayHelloName();
 
             Console.WriteLine($"{pessoa.Name} {pessoa.LastName} - {pessoa.Age} anos");
         }
-        
 
-        /*/List <Animal> animals = new List<Animal>();
-        Animal dog = new Animal();
-
-        dog.Name = "bilu";
-        dog.Specie = "Vira-lata";
-        dog.Song = "auau";
-        animals.Add(dog);
-
-        Console.WriteLine("-----");
-        Console.WriteLine("-----");
-
-        dog.SaySong();
-
-        Console.WriteLine("-----");
-        Console.WriteLine("-----");
-
-        foreach (Animal animal in animals)
-        {
-            Console.WriteLine($"Nome: {animal.Name} especie: {animal.Specie}");
-        }
-        /*/
-
-        List <Carr> carrs = new List<Carr>();
+        List<Carr> carrs = new List<Carr>();
         Carr car = new Carr();
 
         car.Name = "Ferrari";
         car.ModelCarr = "Sport";
-        
+
         Console.WriteLine("-----");
         Console.WriteLine("-----");
 
@@ -191,8 +132,7 @@ public class Program
         Console.WriteLine("-----");
         Console.WriteLine("-----");
 
-
-        List <Employee> employees = new List<Employee>();
+        List<Employee> employees = new List<Employee>();
         Employee employee = new Employee
         {
             Name = "Joaozinho",
@@ -200,66 +140,79 @@ public class Program
             Salary = 3.500,
             JobRole = "Programador Assembly",
             Birthday = "12 novembro"
-        };   
+        };
         employees.Add(employee);
 
-        foreach(var elementEmployee in employees)
+        foreach (var elementEmployee in employees)
         {
-            Console.WriteLine($" {elementEmployee.Name} {elementEmployee.LastName} {elementEmployee.Salary}k - {elementEmployee.JobRole}");
+            Console.WriteLine($"{elementEmployee.Name} {elementEmployee.LastName} {elementEmployee.Salary}k - {elementEmployee.JobRole}");
         }
 
         Console.WriteLine("-----");
         Console.WriteLine("-----");
 
-        List <Velhice> velhices = new List<Velhice>();
+        List<Velhice> velhices = new List<Velhice>();
         Velhice velhice = new Velhice
         {
-            Name="Moto",
+            Name = "Moto",
             AgeFabrication = "2022",
             Type = "Moto 6 cilindradas Honda"
         };
-        velhice.sayFabrication();
+        velhice.SayFabrication();
         Console.WriteLine("-----");
 
         velhices.Add(velhice);
 
-
-       foreach(var element in velhices) {
+        foreach (var element in velhices)
+        {
             Console.WriteLine($"{element.Name} - {element.Type} fabricado em {element.AgeFabrication} ");
         }
         Console.WriteLine("-----");
         Console.WriteLine("-----");
 
-
         List<IAnimal> animals = new List<IAnimal>();
         Animal animal = new Animal
         {
             Name = "Leao",
-            Weight=100,
-            Specie="Mamífero"
+            Weight = 100,
+            Specie = "Mamífero"
         };
 
         animals.Add(animal);
 
-        foreach(var element in animals)
+        foreach (var element in animals)
         {
-            //Console.WriteLine($"{element.Name} {element.Weight} - {element.Specie}");
-
             element.SaySong();
         }
 
-        Dog dog = new Dog();
-        dog.Name = "Rex";
-        dog.Specie = "Canine";
-        dog.Weight = 20.5;
-        dog.Song = "Woof Woof";
+        List<Dog> dogs = new List<Dog>();
 
-        Console.WriteLine($"Nome: {dog.Name}");
-        Console.WriteLine($"Espécie: {dog.Specie}");
-        Console.WriteLine($"Peso: {dog.Weight}");
-        Console.WriteLine($"Som: {dog.Song}");
+        dogs.Add(new Dog
+        {
+            Name = "Rex",
+            Specie = "Canine",
+            Weight = 20.5,
+            Song = "Woof Woof"
+        });
 
-        dog.SaySong();
+        dogs.Add(new Dog
+        {
+            Name = "Buddy",
+            Specie = "Canine",
+            Weight = 15.2,
+            Song = "Bark Bark"
+        });
 
+        foreach (Dog dog in dogs)
+        {
+            Console.WriteLine($"Nome: {dog.Name}");
+            Console.WriteLine($"Espécie: {dog.Specie}");
+            Console.WriteLine($"Peso: {dog.Weight}");
+            Console.WriteLine($"Som: {dog.Song}");
+
+            dog.SaySong();
+
+            Console.WriteLine("--------------------");
+        }
     }
 }
