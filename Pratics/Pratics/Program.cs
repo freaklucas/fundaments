@@ -1,4 +1,7 @@
-﻿public interface IPessoa
+﻿using System.Drawing;
+using System.Xml.Linq;
+
+public interface IPessoa
 {
     string Name { get; set; }
     int Age { get; set; }
@@ -21,12 +24,41 @@ public interface IAnimal
 
 public class Dog : IAnimal
 {
-    public string Size { get; set; }
-    public string Name { get; set; }
-    public string Specie { get; set; }
-    public double Weight { get; set; }
-    public string Song { get; set; }
-    public bool Violent { get; set; }
+    private string size;
+    private string name;
+    private string specie;
+    private double weight;
+    private string song;
+
+    public string Size
+    {
+        get { return size; }
+        set { size = value; }
+    }
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public string Specie
+    {
+        get { return specie; }
+        set { specie = value; }
+    }
+
+    public double Weight
+    {
+        get { return weight; }
+        set { weight = value; }
+    }
+
+    public string Song
+    {
+        get { return song; }
+        set { song = value; }
+    }
 
     public void SaySong()
     {
@@ -215,6 +247,19 @@ public class Program
 
             element.SaySong();
         }
+
+        Dog dog = new Dog();
+        dog.Name = "Rex";
+        dog.Specie = "Canine";
+        dog.Weight = 20.5;
+        dog.Song = "Woof Woof";
+
+        Console.WriteLine($"Nome: {dog.Name}");
+        Console.WriteLine($"Espécie: {dog.Specie}");
+        Console.WriteLine($"Peso: {dog.Weight}");
+        Console.WriteLine($"Som: {dog.Song}");
+
+        dog.SaySong();
 
     }
 }
