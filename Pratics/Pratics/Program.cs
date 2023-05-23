@@ -109,6 +109,16 @@ public class Program
         List<IPessoa> pessoas = new List<IPessoa>();
 
         pessoas.Add(new Pessoa { Name = "Lucas", Age = 24, LastName = "Oliveira" });
+        pessoas.Add(new Pessoa { Name = "Silvio", Age = 29, LastName = "Silveira" });
+        pessoas.Add(new Pessoa { Name = "Marcos", Age = 14, LastName = "Marqueira" });
+
+        var peopleFilters = pessoas.Where(p => p.Age > 14).ToList();
+        foreach(var pessoa in  peopleFilters)
+        {
+            Console.WriteLine($"Pessoas no filtro:");
+            Console.WriteLine($"{pessoa.Name} {pessoa.LastName} e idade {pessoa.Age}");
+
+        }
 
         foreach (var pessoa in pessoas)
         {
@@ -186,7 +196,6 @@ public class Program
         }
 
         List<Dog> dogs = new List<Dog>();
-
         dogs.Add(new Dog
         {
             Name = "Rex",
