@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public interface IPessoa
 {
@@ -100,6 +103,13 @@ public class Animal : IAnimal
 public class Carr : Animal
 {
     public string ModelCarr { get; set; }
+}
+
+public class Product
+{
+    public string Name { get; set; }
+    public double Price { get; set; }
+    public string Category { get; set; }
 }
 
 public class Program
@@ -223,5 +233,24 @@ public class Program
 
             Console.WriteLine("--------------------");
         }
+
+        Console.WriteLine("--------------------");
+        List<Product> products = new List<Product>()
+        {
+            new Product { Name = "Product A", Price = 10.99, Category = "Category 1" },
+            new Product { Name = "Product B", Price = 19.99, Category = "Category 2" },
+            new Product { Name = "Product C", Price = 15.49, Category = "Category 1" },
+            new Product { Name = "Product D", Price = 25.99, Category = "Category 2" },
+            new Product { Name = "Product E", Price = 12.99, Category = "Category 3" }
+        };
+
+        double targetPrice = 20.0;
+        var filteredProducts = products.Where(p => p.Price > targetPrice).ToList();
+        Console.WriteLine("Produto e categoria com preço acima de 20.0");
+        foreach (var product in filteredProducts)
+        {
+            Console.WriteLine($"{product.Name} {product.Price} - {product.Category}");
+        } 
+
     }
 }
