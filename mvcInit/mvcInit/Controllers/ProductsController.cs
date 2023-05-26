@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using mvcInit.Models;
+using System.Collections.Generic;
 
 namespace mvcInit.Controllers
 {
@@ -9,11 +10,15 @@ namespace mvcInit.Controllers
         // GET: ProductsController
         public ActionResult Index()
         {
-            Products products = new Models.Products();
-            products.Id = 1;
-            products.NameProduct = "Sabonete";
-            products.ValueProduct = 12.88;
+            List <Models.Products> products = new List<Models.Products>();
+            Products product = new Products
+            {
+                Id = 2,
+                NameProduct = "sabonete",
+                ValueProduct = 12.88
+            };
 
+            products.Add(product);
 
             return View(products);
         }

@@ -1,4 +1,4 @@
-﻿@model Products
+﻿@model List<Products>
 
 @{
     Layout = "_Layout";
@@ -7,4 +7,10 @@
 <h1>Index</h1>
 <h2>Products view!</h2>
 
-<h4>Nome do produto: @Model.NameProduct</h4>
+@foreach (var product in Model)
+{
+    <h4>Nome do produto: @product.NameProduct - @product.Id</h4>
+    <p>Outras informações do produto:</p>
+    <p>Valor do produto: @product.ValueProduct</p>
+    <hr />
+}
