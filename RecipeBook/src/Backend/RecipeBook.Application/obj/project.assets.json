@@ -1,0 +1,135 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "RecipeBook.Comunication/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RecipeBook.Comunication.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RecipeBook.Comunication.dll": {}
+        }
+      },
+      "RecipeBook.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RecipeBook.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RecipeBook.Domain.dll": {}
+        }
+      },
+      "RecipeBook.Exceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/RecipeBook.Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RecipeBook.Exceptions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RecipeBook.Comunication/1.0.0": {
+      "type": "project",
+      "path": "../../Shared/RecipeBook.Comunication/RecipeBook.Comunication.csproj",
+      "msbuildProject": "../../Shared/RecipeBook.Comunication/RecipeBook.Comunication.csproj"
+    },
+    "RecipeBook.Domain/1.0.0": {
+      "type": "project",
+      "path": "../RecipeBook.Domain/RecipeBook.Domain.csproj",
+      "msbuildProject": "../RecipeBook.Domain/RecipeBook.Domain.csproj"
+    },
+    "RecipeBook.Exceptions/1.0.0": {
+      "type": "project",
+      "path": "../../../RecipeBook.Exceptions/RecipeBook.Exceptions.csproj",
+      "msbuildProject": "../../../RecipeBook.Exceptions/RecipeBook.Exceptions.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "RecipeBook.Comunication >= 1.0.0",
+      "RecipeBook.Domain >= 1.0.0",
+      "RecipeBook.Exceptions >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\lucas\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\lucas\\source\\repos\\RecipeBook\\src\\Backend\\RecipeBook.Application\\RecipeBook.Application.csproj",
+      "projectName": "RecipeBook.Application",
+      "projectPath": "C:\\Users\\lucas\\source\\repos\\RecipeBook\\src\\Backend\\RecipeBook.Application\\RecipeBook.Application.csproj",
+      "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lucas\\source\\repos\\RecipeBook\\src\\Backend\\RecipeBook.Application\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Users\\lucas\\source\\repos\\RecipeBook\\RecipeBook.Exceptions\\RecipeBook.Exceptions.csproj": {
+              "projectPath": "C:\\Users\\lucas\\source\\repos\\RecipeBook\\RecipeBook.Exceptions\\RecipeBook.Exceptions.csproj"
+            },
+            "C:\\Users\\lucas\\source\\repos\\RecipeBook\\src\\Backend\\RecipeBook.Domain\\RecipeBook.Domain.csproj": {
+              "projectPath": "C:\\Users\\lucas\\source\\repos\\RecipeBook\\src\\Backend\\RecipeBook.Domain\\RecipeBook.Domain.csproj"
+            },
+            "C:\\Users\\lucas\\source\\repos\\RecipeBook\\src\\Shared\\RecipeBook.Comunication\\RecipeBook.Comunication.csproj": {
+              "projectPath": "C:\\Users\\lucas\\source\\repos\\RecipeBook\\src\\Shared\\RecipeBook.Comunication\\RecipeBook.Comunication.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
