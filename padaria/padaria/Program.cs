@@ -1,15 +1,28 @@
+using Microsoft.EntityFrameworkCore;
+using padaria.Context;
+using Microsoft.EntityFrameworkCore.SqlServer;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+// Adicione o serviço do contexto
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer("DefaultConnection"));
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
