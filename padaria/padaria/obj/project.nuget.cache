@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DZuH7NhqHmkLkFncp4AK/swdAFYoWvjJ/GrPVNlVHgYlnm9fJ6XiiK5887djvNnb5Lx3W+AsjJXBjSzrvPAWzQ==",
+  "dgSpecHash": "ux9ve8CyzF+J2DU/pdGkagYv07uHlBLTkmaY4rytIiN4tICKx3S11GnWkGsMjbsd5ZIR3LUfnl3gS6OPT8ST4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\lucas\\source\\repos\\padaria\\padaria\\padaria.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.5\\microsoft.entityframeworkcore.design.7.0.5.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.5\\microsoft.entityframeworkcore.relational.7.0.5.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.5\\microsoft.entityframeworkcore.sqlserver.7.0.5.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.16\\microsoft.entityframeworkcore.tools.6.0.16.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
@@ -76,8 +77,8 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "padaria depende de Microsoft.EntityFrameworkCore.SqlServer (>= 7.0.0), mas Microsoft.EntityFrameworkCore.SqlServer 7.0.0 não foi encontrado. A melhor correspondência aproximada de Microsoft.EntityFrameworkCore.SqlServer 7.0.5 foi resolvida.",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "message": "padaria depende de Microsoft.EntityFrameworkCore.Tools (>= 6.0.3), mas Microsoft.EntityFrameworkCore.Tools 6.0.3 não foi encontrado. A melhor correspondência aproximada de Microsoft.EntityFrameworkCore.Tools 6.0.16 foi resolvida.",
+      "libraryId": "Microsoft.EntityFrameworkCore.Tools",
       "targetGraphs": [
         "net7.0"
       ]

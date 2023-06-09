@@ -17,7 +17,7 @@ namespace padaria.Models
 
         [StringLength(200, ErrorMessage = "Tamanho máximo são 200 caracteres!")]
         [Required(ErrorMessage = "Descrição é obrigatório!")]
-        [Display(Name = "Name")]
+        [Display(Name = "Descrição")]
         public string Description { get; set; }
 
 
