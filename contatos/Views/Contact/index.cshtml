@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Listagem de contatos";
+}
+
+<main>
+  <section>
+    <div class="text-center">
+      <h1 class="display-4">Listagem de contatos!</h1>
+      <div class="btn btn-success criar" 
+        role="button">
+        <a asp-controller="Contact" asp-action="create">+ Contato</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-4">
+    <table class="table table-striped ">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Celular</th>
+          <th scope="col"></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto@gmail.com</td>
+          <td>11 12342562</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a role="button" class="btn btn-primary">Editar</a>
+              <a role="button" class="btn btn-danger">Apagar</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton@gmail.com</td>
+          <td>11 12342562</td>
+                    <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a role="button" class="btn btn-primary">Editar</a>
+              <a role="button" class="btn btn-danger">Apagar</a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>thebird@gmail.com</td>
+          <td>11 12342562</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <a role="button" class="btn btn-primary">Editar</a>
+              <a role="button" class="btn btn-danger">Apagar</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<style>
+  .criar a {
+    text-decoration: none;
+  }
+</style>
