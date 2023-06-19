@@ -1,0 +1,39 @@
+@{
+  ViewData["Title"] = "Confirmação apagar contato";
+}
+<main>
+  <section>
+    <h1 class="display-4">
+      Deseja apagar contato 
+      <b>(Lucas Oliveira)</b> ?
+    </h1>
+    <div class="card">
+        <div class="containerElement">
+          <a 
+            class="btn btn-primary" 
+            role="button"> 
+            Cancelar exclusão 
+          </a>
+          <a 
+            class="btn btn-danger" 
+            role="button"> 
+            Confirmar exclusão 
+          </a>
+        </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .containerElement {
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 2rem;
+  }
+
+  .containerElement a {
+    margin: 0.2rem;
+  }
+</style>

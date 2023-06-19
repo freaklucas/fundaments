@@ -19,7 +19,7 @@ public class ContactController : Controller
     {
         return View();
     }
-    public IActionResult Delete()
+    public IActionResult DeleteConfirm()
     {
         return View();
     }
