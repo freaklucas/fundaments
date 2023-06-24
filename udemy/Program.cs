@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
 
@@ -14,6 +15,16 @@ app.MapPost("/saveproduct", async (HttpRequest request) => {
   var product = await request.ReadFromJsonAsync<Product>();
   return product.Code + " " + product.Name;
 });
+
+// api.app.com/users?dataInit={date}&dateEnd={dateEnd}
+app.MapGet("/product", ([FromQuery]string dateInit, [FromQuery] string dateEnd) => {
+  return dateInit + " - " + dateEnd;
+});
+//api.app.com/user/{code}
+app.MapGet("/product/{code}", ([FromRoute] string code) => {
+  return code;
+});
+
 
 app.Run();
 
