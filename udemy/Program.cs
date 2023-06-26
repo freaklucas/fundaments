@@ -8,31 +8,20 @@ using System.Text.Json;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-app.MapPost("/user", () => new { Name = "Lucas Oliveira", Age = "24" });
-app.MapGet("/header", () => (HttpResponse response) => response.Headers.Add("Teste", "Lucas Header"));
-
-app.MapPost("/saveproduct", async (HttpRequest request) =>
+app.UseRouting();
+app.UseEndpoints(endpoints =>
 {
-    var product = await request.ReadFromJsonAsync<Product>();
-    return product.Code + " " + product.Name;
-});
+    endpoints.MapPost("/saveproduct", (Product product) =>
+    {
+        ProductRepository.Add(product);
+    });
 
-// api.app.com/users?dataInit={date}&dateEnd={dateEnd}
-app.MapGet("/product", ([FromQuery] string dateInit, [FromQuery] string dateEnd) =>
-{
-    return dateInit + " - " + dateEnd;
-});
-//api.app.com/user/{code}
-app.MapGet("/product/{code}", ([FromRoute] string code) =>
-{
-    return code;
-});
+    endpoints.MapGet("/getproduct/{code}", ([FromRoute] string code) =>
+    {
+        var product = ProductRepository.GetBy(code);
 
-app.MapGet("/productCode", (HttpRequest request) =>
-{
-    return request.Headers["product-code"].ToString();
-
+        return product;
+    });
 });
 
 app.Run();
