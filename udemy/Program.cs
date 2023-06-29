@@ -11,21 +11,21 @@ var app = builder.Build();
 app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapPost("/saveproduct", (Product product) =>
+    endpoints.MapPost("/products", (Product product) =>
     {
         ProductRepository.Add(product);
 
         return product;
     });
 
-    endpoints.MapGet("/getproduct/{code}", ([FromRoute] string code) =>
+    endpoints.MapGet("/products/{code}", ([FromRoute] string code) =>
     {
         var product = ProductRepository.GetBy(code);
 
         return product;
     });
 
-    endpoints.MapPut("/editproduct", (Product product) => {
+    endpoints.MapPut("/products", (Product product) => {
         var productSaved = ProductRepository.GetBy(product.Code); 
 
         productSaved.Name = product.Name;
@@ -33,7 +33,7 @@ app.UseEndpoints(endpoints =>
         return productSaved;
     });
 
-    endpoints.MapDelete("/deleteproduct/{code}", ([FromRoute] string code ) => {
+    endpoints.MapDelete("/products/{code}", ([FromRoute] string code ) => {
         var productSaved = ProductRepository.GetBy(code);
 
         ProductRepository.Remove(productSaved);
@@ -47,6 +47,7 @@ app.Run();
 public static class ProductRepository
 {
     public static List<Product> Products { get; set; }
+
 
     static ProductRepository()
     {
@@ -69,7 +70,7 @@ public static class ProductRepository
 }
 
 public class Product
-{
+{   
     public string Code { get; set; }
     public string Name { get; set; }
 }
