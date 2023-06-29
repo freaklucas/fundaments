@@ -14,23 +14,26 @@ app.UseEndpoints(endpoints =>
     endpoints.MapPost("/products", (Product product) =>
     {
         ProductRepository.Add(product);
-
-        return product;
+        return Results.Created($"/products/{product.Code}", product.Code); 
     });
 
     endpoints.MapGet("/products/{code}", ([FromRoute] string code) =>
     {
         var product = ProductRepository.GetBy(code);
 
-        return product;
+        if(product != null)
+            return Results.Ok(product);
+        
+        return Results.NotFound();
     });
 
-    endpoints.MapPut("/products", (Product product) => {
-        var productSaved = ProductRepository.GetBy(product.Code); 
+    endpoints.MapPut("/products", (Product product) =>
+    {
+        var productSaved = ProductRepository.GetBy(product.Code);
 
         productSaved.Name = product.Name;
 
-        return productSaved;
+        return Results.Ok(productSaved);
     });
 
     endpoints.MapDelete("/products/{code}", ([FromRoute] string code ) => {
@@ -38,7 +41,7 @@ app.UseEndpoints(endpoints =>
 
         ProductRepository.Remove(productSaved);
 
-        return productSaved;
+        return Results.Ok(productSaved);
     });
 });
 
@@ -47,7 +50,6 @@ app.Run();
 public static class ProductRepository
 {
     public static List<Product> Products { get; set; }
-
 
     static ProductRepository()
     {
