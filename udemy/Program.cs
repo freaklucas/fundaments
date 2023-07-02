@@ -43,6 +43,9 @@ app.UseEndpoints(endpoints =>
 
         return Results.Ok(productSaved);
     });
+    endpoints.MapGet("/configuration/database", (IConfiguration configuration) => {
+        return Results.Ok($"{configuration["database:connection"]}/{configuration["database:Port"]}");
+    });
 });
 
 app.Run();
